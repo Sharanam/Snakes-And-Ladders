@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"os/exec"
 )
 
 // color codes ref: https://gist.github.com/ik5/d8ecde700972d4378d87
@@ -23,6 +25,17 @@ func main(){
 	fmt.Println("Number board:")
 	party := map[string]int8{"W":0,"X":12,"Y":4,"Z":3}
 	fmt.Println(boardPrint(party))
+	res:=""
+	fmt.Scanln(&res)
+	if(res!="exit"){
+		// clear screen: https://stackoverflow.com/a/19290028
+		cmd := exec.Command("cmd", "/c", "cls")
+    	cmd.Stdout = os.Stdout
+    	cmd.Run()
+		// will run code again:
+		main()
+		// upgrade in login : indeed
+	}
 }
 
 func doDice() int8{
