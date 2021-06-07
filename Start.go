@@ -17,8 +17,22 @@ const (
 	DebugColor   = "\033[0;36m%s\033[0m"
 )
 var boardData = map[int8]int8{
-	14:28,
-	13:8,
+	// ladders
+	4:14,
+	8:30,
+	21:42,
+	28:74,
+	50:67,
+	71:92,
+	80:99,
+	// snakes
+	32:10,
+	36:6,
+	48:26,
+	63:18,
+	88:24,
+	95:56,
+	97:78,
 }
 
 // variables are being used throughout game.
@@ -28,10 +42,10 @@ var temp = [4]string{"W", "X", "Y", "Z"}
 var response=""
 
 func clearScreen(){
-		// clear screen: https://stackoverflow.com/a/19290028
-		cmd := exec.Command("cmd", "/c", "cls")
-    	cmd.Stdout = os.Stdout
-    	cmd.Run()
+	// clear screen: https://stackoverflow.com/a/19290028
+	cmd := exec.Command("cmd", "/c", "cls")
+	cmd.Stdout = os.Stdout
+	cmd.Run()
 	// will print title everytime it clears console.
 	fmt.Printf(DebugColor,"Snakes and Ladders\n")
 }
@@ -100,7 +114,7 @@ func round(){
 	}else{
 		exitGame()
 	}
-	}
+}
 
 func exitGame(){
 	fmt.Println("Thank you! Visit again :)")
@@ -113,7 +127,7 @@ func doDice() int8{
 func boardPrint() string{
 	s, b:="",""
 	var i int8
-		for i=1; i<=100;i++{
+	for i=1; i<=100;i++{
 		if  v, found :=boardData[i]; found {
 			if v<i{
 				fmt.Printf(ErrorColor,fmt.Sprintf("%5v",boardData[i]))
@@ -137,12 +151,12 @@ func boardPrint() string{
 				fmt.Printf(WarningColor,fmt.Sprintf("%5v",b))
 			} else{
 					fmt.Printf("%5v",i)
-				}
+			}
 			b=""
 		}
-			if i % 10 == 0{
-				fmt.Print("\n")
-			}
+		if i % 10 == 0{
+			fmt.Print("\n")
+		}
 	}
 	return s
 }
