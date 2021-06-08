@@ -1,4 +1,4 @@
-# SnakesAndLadders
+# Snakes And Ladders
 Made using go-lang
 
 As I was learning Go from: [Net Ninja](https://youtube.com/playlist?list=PL4cUxeGkcC9gC88BEo9czgyS72A3doDeM)
