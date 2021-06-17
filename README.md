@@ -18,3 +18,10 @@ I thought to make out something using this language.
 ```go build Start.go```
 
 ### Supported & Tested in Windows 10
+
+## not developer
+
+- if you are not a developer, you should download executable file.
+Here's the link (of itch.io, where I published executable):
+
+[sharanam.itch.io/snakes-and-ladders](https://sharanam.itch.io/snakes-and-ladders)
